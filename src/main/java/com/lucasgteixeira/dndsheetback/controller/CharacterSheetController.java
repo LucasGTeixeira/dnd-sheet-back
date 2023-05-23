@@ -48,6 +48,13 @@ public class CharacterSheetController {
         return ResponseEntity.created(uri).body(characterSheet);
     }
 
+    @PutMapping
+    public ResponseEntity<CharacterSheet> update(@RequestBody CharacterSheet characterSheet){
+        service.update(characterSheet);
+        return ResponseEntity.ok().body(characterSheet);
+    }
+
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         service.delete(id);
