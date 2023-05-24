@@ -41,7 +41,7 @@ public class CharacterSheetService {
         repository.save(characterSheet);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public void delete(Long id){
         repository.deleteById(id);
     }

@@ -2,6 +2,7 @@ package com.lucasgteixeira.dndsheetback.controller;
 
 import com.lucasgteixeira.dndsheetback.model.CharacterSheet;
 import com.lucasgteixeira.dndsheetback.service.CharacterSheetService;
+import com.lucasgteixeira.dndsheetback.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class CharacterSheetController {
 
     @Autowired
     private CharacterSheetService service;
+
+    @Autowired
+    private PlayerService playerService;
 
     //find all
     @GetMapping

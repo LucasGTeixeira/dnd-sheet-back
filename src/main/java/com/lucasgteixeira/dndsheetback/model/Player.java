@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
