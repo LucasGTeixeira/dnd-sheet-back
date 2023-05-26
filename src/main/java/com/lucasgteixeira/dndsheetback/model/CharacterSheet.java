@@ -71,8 +71,4 @@ public class CharacterSheet {
     private int emeraldPieces;
     private int goldPieces;
     private int platinumPieces;
-
-    @ManyToOne
-    @JoinColumn(name = "player_id")
-    private Player owner;
 }

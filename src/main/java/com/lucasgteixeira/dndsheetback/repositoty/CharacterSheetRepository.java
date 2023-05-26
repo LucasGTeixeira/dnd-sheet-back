@@ -13,7 +13,4 @@ import java.util.Optional;
 @Repository
 public interface CharacterSheetRepository extends JpaRepository<CharacterSheet, Long> {
     Optional<CharacterSheet> findCharacterSheetById(Long id);
-
-    @Query("select i from CharacterSheet i where i.owner.id=?1")
-    List<CharacterSheet> findAllByOwner(@Param("table") Long id);
 }

@@ -2,10 +2,8 @@ package com.lucasgteixeira.dndsheetback.controller;
 
 import com.lucasgteixeira.dndsheetback.model.CharacterSheet;
 import com.lucasgteixeira.dndsheetback.service.CharacterSheetService;
-import com.lucasgteixeira.dndsheetback.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -20,20 +18,10 @@ public class CharacterSheetController {
     @Autowired
     private CharacterSheetService service;
 
-    @Autowired
-    private PlayerService playerService;
-
     //find all
     @GetMapping
-    public ResponseEntity<List<CharacterSheet>> findAll(){
+    public ResponseEntity<List<CharacterSheet>> findAll() {
         List<CharacterSheet> characterSheets = service.findAll();
-        return ResponseEntity.ok().body(characterSheets);
-    }
-
-    //find all by player
-    @GetMapping(value = "/Owner/{id}")
-    public ResponseEntity<List<CharacterSheet>> findOwnedCharacters(@PathVariable Long id) {
-        List<CharacterSheet> characterSheets = service.findAllByOwnerId(id);
         return ResponseEntity.ok().body(characterSheets);
     }
 

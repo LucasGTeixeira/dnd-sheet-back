@@ -25,11 +25,6 @@ public class CharacterSheetService {
         return repository.findCharacterSheetById(id).get();
     }
 
-    @Transactional(readOnly = true)
-    public List<CharacterSheet> findAllByOwnerId(Long id){
-        return repository.findAllByOwner(id);
-    }
-
     @Transactional(readOnly = false)
     public void insert(CharacterSheet characterSheet){
         repository.save(characterSheet);
